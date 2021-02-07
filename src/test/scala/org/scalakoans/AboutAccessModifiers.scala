@@ -28,40 +28,40 @@ package harkonnen {
   class BetaBase extends AlphaBase with KoanSuite {
     val param: AlphaBase = new AlphaBase
 
-    koan("With private keywords: Only private[packagename] members can be accessed via inheritance") {
+    koan("With private keywords: Only private[harkonnen] members can be accessed via inheritance") {
       //melange should be(1) //not accessible
       //oregano should be (2) //not accessible
       //tarragon should be (3) //not accessible
-      rosemary should be(__)
+      rosemary should be(4)
     }
 
-    koan("With private keywords: Only private[packagename] members can be accessed via parameter") {
+    koan("With private keywords: Only private[harkonnen] members can be accessed via parameter") {
       //param.melange should be (1) //not accessible
       //param.oregano should be (2) //not accessible
       //param.tarragon should be (3) //not accessible
-      param.rosemary should be(__)
+      param.rosemary should be(4)
     }
 
     koan("With public keywords: All members can be accessed through inheritance") {
-      parsley should be(__)
+      parsley should be(5)
     }
 
     koan("With public keywords: All members can be accessed can be accessed via parameter") {
-      param.parsley should be(__)
+      param.parsley should be(5)
     }
 
     koan("With protected keywords: All members can be accessed via inheritance") {
-      sage should be(__)
+      sage should be(10)
       paprika should be(__) //not accessible
       saffron should be(__) //not accessible
-      thyme should be(__)
+      thyme should be(13)
     }
 
-    koan("With protected keywords: Only private[packagename] members can be accessed via parameter") {
+    koan("With protected keywords: Only private[harkonnen] members can be accessed via parameter") {
       //param.sage should be (10) //not accessible
       //param.paprika should be (11) //not accessible
       //param.saffron should be (12) //not accessible
-      param.thyme should be(__)
+      param.thyme should be(13)
     }
   }
 

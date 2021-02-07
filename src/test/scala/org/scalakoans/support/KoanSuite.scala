@@ -2,9 +2,12 @@ package org.scalakoans.support
 
 import org.scalatest._
 import org.scalatest.events.{Event, TestFailed, TestPending, TestSucceeded}
-import scala.language.reflectiveCalls
+import org.scalatest.matchers.should.Matchers
 
-trait KoanSuite extends FunSuite with CancelAfterFailure with Matchers {
+import scala.language.reflectiveCalls
+import org.scalatest.funsuite.AnyFunSuite
+
+trait KoanSuite extends AnyFunSuite with CancelAfterFailure with Matchers {
 
   override def runTests(testName: Option[String], args: Args): Status = {
 
